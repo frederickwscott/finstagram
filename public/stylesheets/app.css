@@ -11,4 +11,9 @@ main {
     background-color: white;
     padding: 16px;
 }
-
+.post {
+    margin-bottom: 48px;
+}
+.post .user-info img {
+    border-radius: 50%;
+}
