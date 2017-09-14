@@ -1,3 +1,11 @@
+def humanized_time_ago(time_ago_in_minutes)
+    if time_ago_in_minutes >= 60
+        "#{time_ago_in_minutes / 60} hours ago"
+    else
+        "#{time_ago_in_minutes} minutes ago"
+    end
+end
+
 get '/' do
     username = "frederick_s"
     avatar_url = "https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAssAAAAJDE1ODI2N2M1LTYwOTgtNDY2YS04YTdmLTEyMmY1Yzk1YzlmYQ.jpg"
@@ -8,9 +16,6 @@ get '/' do
     "frederick_s: Espresso is coffee brewed by forcing a small amount of nearly boiling water under pressure through finely ground coffee beans."
     ]
 
-    if time_ago_in_minutes >= 60
-        "#{time_ago_in_minutes / 60} hours ago"
-    else 
-        "#{time_ago_in_minutes} minutes ago"
-    end
+    humanized_time_ago(time_ago_in_minutes)
 end
+
