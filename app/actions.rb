@@ -47,5 +47,6 @@ get '/' do
     }
     
     [post_frederick, post_whale, post_marlin].to_s
+erb(:index)
 end
 
