@@ -1,31 +1,26 @@
-        <header>
-            <h1>Finstagram</h1>
-        </header>
-        <main role=main>
-            
-            <article class="post">
-                <div class="user-info">
-                  <img src=https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAssAAAAJDE1ODI2N2M1LTYwOTgtNDY2YS04YTdmLTEyMmY1Yzk1YzlmYQ.jpg alt=frederick_scott>
-		          <h2>frederick_s</h2>
-		          <h3>15 mins ago</h3>
-		        </div>
-		        <a class="photo" href="#">
-                <img src=http://static1.squarespace.com/static/56e0f44160b5e96aec2019f3/t/5704feaa7da24f6f4e0265de/1459945131814/espresso-09.jpg?format=1000w alt=espresso>
-                </a>
-                <div class= "actions">
-                    0 likes
-                    <span class="comment-count">0 comments</span>
-                </div>
-                <ul class="comments">
-                    <li>
-                        <p>
-                            frederick_s: Espresso is coffee brewed by forcing a small amount of nearly boiling water under pressure through finely ground coffee beans.
-                        </p>
-                    </li>
-                </ul>
-            </article>
-            
-            <article class="post">
+<article class="post">
+    <div class="user-info">
+        <img src="<%= @post_frederick[:avatar_url] %>" alt="<%= @post_frederick[:username] %>">
+        <h2><%= @post_frederick[:username] %></h2>
+		<h3><%= @post_frederick[:humanized_time_ago] %></h3>
+	</div>
+	<a class="photo" href="#">
+        <img src="<%= @post_frederick[:photo_url] %>" alt="post from <%= @post_frederick[:username] %>">
+    </a>
+    <div class= "actions">
+        <%= @post_frederick[:like_count] %> likes
+        <span class="comment-count"><%= @post_frederick[:comment_count] %> comment</span>
+    </div>
+    <ul class="comments">
+        <li>
+            <p>
+                <%= @post_frederick[:comments][0][:username] %>: <%= @post_frederick[:comments][0][:text] %>
+            </p>
+        </li>
+    </ul>
+</article>
+
+<article class="post">
                 <div class="user-info">
                     <img src="http://naserca.com/images/kirk_whalum.jpg" alst="kirk_whalum">
                     <h2>kirk_whalum</h2>
@@ -68,5 +63,3 @@
                     </li>
                 </ul>
             </article>
-            
-        </main>
