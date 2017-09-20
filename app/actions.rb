@@ -46,7 +46,8 @@ get '/' do
         }]
     }
     
-    [@post_frederick, @post_whale, @post_marlin].to_s
+    @post = [@post_frederick, @post_whale, @post_marlin]
+    
     erb(:index)
 end
 

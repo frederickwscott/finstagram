@@ -2,69 +2,27 @@
     <h1>Finstagram</h1>
 </header>
 <main role ="main">
-<article class="post">
-    <div class="user-info">
-        <img src="<%= @post_frederick[:avatar_url] %>" alt="<%= @post_frederick[:username] %>">
-        <h2><%= @post_frederick[:username] %></h2>
-		<h3><%= @post_frederick[:humanized_time_ago] %></h3>
-	</div>
-	<a class="photo" href="#">
-        <img src="<%= @post_frederick[:photo_url] %>" alt="post from <%= @post_frederick[:username] %>">
-    </a>
-    <div class= "actions">
-        <%= @post_frederick[:like_count] %> likes
-        <span class="comment-count"><%= @post_frederick[:comment_count] %> comment</span>
-    </div>
-    <ul class="comments">
-        <li>
-            <p>
-                <%= @post_frederick[:comments][0][:username] %>: <%= @post_frederick[:comments][0][:text] %>
-            </p>
-        </li>
-    </ul>
-</article>
-
-<article class="post">
-                <div class="user-info">
-                    <img src="http://naserca.com/images/kirk_whalum.jpg" alst="kirk_whalum">
-                    <h2>kirk_whalum</h2>
-                    <h3>1 hour ago</h3>
-                </div>
-                <a class="photo" href="#">
-                    <img src="http://naserca.com/images/whale.jpg" alt="post from kirk_whalum">
-                </a>
-                <div class="actions">
-                    0 likes
-                    <span class="comment-count">0 comments</span>
-                </div>
-                <ul class="comments">
-                    <li>
-                        <p>
-                            kirk_whalum: #weekendsvibes
-                        </p>
-                    </li>
-                </ul>
-            </article>
-    
-            <article class="post">
-                <div class="user-info">
-                    <img src="http://naserca.com/images/marlin_peppa.jpg" alst="marlin_peppa">
-                    <h2>marlin_peppa</h2>
-                    <h3>3 hours ago</h3>
-                </div>
-                <a class="photo" href="#">
-                    <img src="http://naserca.com/images/marlin.jpg" alt="post from merlin_peppa">
-                </a>
-                <div class="actions">
-                    0 likes
-                    <span class="comment-count">0 comments</span>
-                </div>
-                <ul class="comments">
-                    <li>
-                        <p>
-                            marlin_peppa: lunchtime! ;)
-                        </p>
-                    </li>
-                </ul>
-            </article>
+    <% @post.each do |post| %>
+        <article class="post">
+            <div class="user-info">
+                <img src="<%= post[:avatar_url] %>" alt="<%= post[:username] %>">
+                <h2><%= post[:username] %></h2>
+		        <h3><%= post[:humanized_time_ago] %></h3>
+	        </div>
+	        <a class="photo" href="#">
+                <img src="<%= post[:photo_url] %>" alt="post from <%= post[:username] %>">
+            </a>
+            <div class= "actions">
+                <%= post[:like_count] %> likes
+                <span class="comment-count"><%= post[:comment_count] %> comment</span>
+            </div>
+            <ul class="comments">
+                <li>
+                    <p>
+                        <%= post[:comments][0][:username] %>: <%= post[:comments][0][:text] %>
+                    </p>
+                </li>
+            </ul>
+    </article>
+<% end %>
 </main>
